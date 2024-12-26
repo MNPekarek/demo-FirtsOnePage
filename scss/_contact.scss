@@ -1,0 +1,111 @@
+@use "mixin";
+@use "var";
+
+// Estilos generales del formulario
+#contact {
+  background-color: rgb(33, 37, 41);
+  background-image: url(../assets/img/map-image.webp);
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  .container {
+    //max-width: 900px;
+  }
+
+  .section-heading {
+    color: var.$text-dark;
+    @include mixin.title;
+    font-family: "Agu Display",serif;
+  }
+
+  .section-subheading {
+    @include mixin.subtitles;
+    color: var.$color-muted-dark;
+  }
+}
+
+// Estilo de los campos del formulario
+form {
+  .form-group {
+    margin-bottom: 1.5rem;
+
+    input {
+      padding: 1.25rem;
+      .form-control {
+        height: auto;
+      }
+    }
+
+    textarea {
+      font-size: 1rem;
+      padding: 1rem;
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid var.$input-border-color;
+      transition: border-color 0.3s ease;
+
+      &:focus {
+        border-color: var.$input-focus-border-color;
+        outline: none;
+      }
+
+      &.is-invalid {
+        border-color: var.$invalid-feedback-color;
+      }
+    }
+
+    textarea {
+      height: 100%;
+      min-height: 15rem;
+    }
+  }
+
+  // Mensajes de error
+  .invalid-feedback {
+    display: none;
+    font-size: 0.875rem;
+    color: var.$invalid-feedback-color;
+  }
+
+  // Mostrar los mensajes de error cuando sea necesario
+  input.is-invalid~.invalid-feedback,
+  textarea.is-invalid~.invalid-feedback {
+    display: block;
+  }
+}
+
+// Estilo para el botón de enviar
+#submitButton {
+  @include mixin.btn-xl();
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:disabled {
+    background-color: var.$colortext2;
+    cursor: not-allowed;
+  }
+}
+
+// Estilo para mensajes de éxito o error
+#submitSuccessMessage,
+#submitErrorMessage {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#submitSuccessMessage {
+  background-color: var.$success-color;
+  color: white;
+}
+
+#submitErrorMessage {
+  background-color: var.$error-color;
+  color: white;
+}
+

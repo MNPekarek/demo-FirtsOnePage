@@ -1,0 +1,208 @@
+@use "var";
+@use "mixin";
+
+.portfolio-modal.show {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+// General styles for modals
+.portfolio-modal {
+  display: none;
+  position: fixed;   
+  padding: 1rem;
+  border-radius: 8px;
+  @include mixin.min-width-1200{
+    left: 4.5%;
+  }
+
+
+  
+  &.modal {
+    // Estilos base para el modal
+    transition: opacity 0.3s ease; // Transición al mostrar u ocultar el modal
+    opacity: 0;
+    animation: fadeIn 0.3s ease-in-out;
+
+    &.show {
+      opacity: 1;
+      pointer-events: auto; // Permite interactividad solo si el modal está visible
+    }
+  }
+
+  .modal-dialog {
+    // Estilos para el diálogo del modal
+    transition: transform 0.4s ease-in-out; // Transición más suave para el efecto de animación
+    margin: 1rem;
+    max-width: 90%;    
+  }
+
+  .modal-content {
+    // Estilos para el contenido del modal
+    padding-top: 2rem;
+    text-align: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px; // Bordes redondeados
+    background-color: var.$bg-modal;
+    pointer-events: auto;
+  }
+
+  .close-modal {
+    // Estilos para el botón de cerrar el modal
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    background-color: var.$bg-btn-close;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background: var.$bg-btn-close-hover; // Efecto hover para brindar interactividad
+    }
+
+    img {
+      // Estilos para el ícono de cerrar
+      width: 60%;
+
+    }
+  }
+
+  .container {
+    width: 100%;
+
+    // Estilos para el contenedor principal
+    .row {
+
+      // Estilos para la fila
+      .col-lg-8 {
+        // Estilos para la columna que contiene el contenido del modal
+
+        .modal-body {
+          // Estilos específicos para el cuerpo del modal
+          padding: 1rem;
+
+          h2 {
+            // Estilos para el título del proyecto
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+          }
+
+          .item-intro {
+            // Estilos para el texto introductorio
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+
+          }
+
+          img {
+            // Estilos para las imágenes dentro del modal
+            margin: 1rem 0;
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+          }
+
+          p {
+            // Estilos para los párrafos
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            font-size: 1rem;
+          }
+
+          ul {
+            // Estilos para la lista de detalles
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+            list-style-type: disc;
+
+            li {
+              // Estilos para cada ítem de la lista
+              font-size: 0.9rem;
+              margin-bottom: 0.5rem;
+              list-style: none;
+
+              strong {
+                // Estilos para los títulos de los detalles
+                font-weight: bolder;
+              }
+            }
+          }
+
+          .btn {
+            // Estilos para el botón
+            margin: 1rem 0;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            color: var.$bg-modal;
+            background: var.$bg-btn-close;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+              background-color: var.$bg-btn-close-hover;
+            }
+
+            &.btn-primary {
+              // Estilos específicos para el botón primario
+            }
+
+            i {
+              // Estilos para el ícono dentro del botón
+              overflow: visible;
+              box-sizing: content-box;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+body.night-mode{
+  .portfolio-modal{
+    .modal-content{
+      background-color: var.$bg-modal-night-mode;
+    }
+    .container{
+      .row{
+        .col-lg-8{
+          .modal-body{
+            p{
+              color: var.$color-muted-dark;
+            }  
+            .btn{
+              background-color: var.$bg-btn-close-hover;
+              &:hover{
+                background-color: var.$bg-btn-close;
+                color: var.$bg-modal;
+              }
+            }          
+          }          
+        }
+      }
+    }
+
+  }
+}

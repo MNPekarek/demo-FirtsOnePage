@@ -1,0 +1,137 @@
+@use "var";
+@use "animation";
+
+//Mixin para modificar los botones XL
+@mixin btn-xl {
+  padding: 1.25rem 2.25rem;
+  font-size: 1.125rem;
+  background-color: var.$colorbtn;
+  /* Fondo principal */
+  color: #fff;
+  /* Color de texto */
+  border: none;
+  /* Borde del botón */
+  font-weight: bold;
+  border-radius: 5px;
+  /* Bordes redondeados */
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var.$colorbtn-hover;
+    /* Color de fondo al pasar el mouse */
+    transform: scale(1.1);
+  }
+}
+
+@mixin btn-social {
+  height: 2.5rem;
+  width: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  border-radius: 100%;
+}
+
+@mixin title {
+  font-size: 2.5rem;
+  margin-top: 0px;
+  margin-bottom: 1rem;
+}
+
+@mixin subtitles {
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: italic;
+  margin-bottom: 4rem;
+}
+
+// Mixin animaciones
+// Crea un mixin genérico para animaciones
+@mixin animate($animation, $duration: 1s, $easing: ease-out, $delay: 0s) {
+  animation-name: #{$animation};
+  animation-duration: #{$duration};
+  animation-timing-function: #{$easing};
+  animation-delay: #{$delay};
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+
+// Crea clases específicas para cada animación
+@mixin scroll-animation($direction, $distance, $duration, $easing) {
+  opacity: 0;
+  transform: translate#{$direction}($distance);
+  transition: opacity $duration $easing, transform $duration $easing;
+
+  &.in-view {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@mixin zoomIn {
+  opacity: 0;
+  transform: scale(0.8);
+}
+to {
+  opacity: 1;
+  transform: scale(1);
+}
+
+// Ejemplo de uso
+// .fade-up {
+  // @include scroll-animation(y, 50px, 0.8s, ease-out);
+// }
+
+// .fade-left {
+  // @include scroll-animation(x, -50px, 0.8s, ease-out);
+// }
+
+
+
+
+
+// Mixin para media query de ancho mínimo de 576px
+@mixin min-width-576 {
+  @media (min-width: 576px) {
+    @content;
+  }
+}
+
+// Mixin para media query de ancho mínimo de 768px
+@mixin min-width-768 {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+// Mixin para media query de ancho mínimo de 992px
+@mixin min-width-992 {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+// Mixin para media query de ancho mínimo de 1200px
+@mixin min-width-1200 {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+// Mixin para media query de ancho mínimo de 1400px
+@mixin min-width-1400 {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+
+// Mixin para media query de ancho maximo de 991px
+@mixin max-width-991 {
+  @media (max-width: 991px) {
+    @content;
+  }
+}

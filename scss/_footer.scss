@@ -1,0 +1,49 @@
+@use "mixin";
+@use "var";
+
+// Footer
+.footer {
+    //padding: 1rem 0; // Ajusta el espaciado general del footer
+    text-align: center;
+    font-size: 0.9rem;
+  
+    .container {
+      .row {
+        // Fila principal del footer  
+        .col-lg-4 {
+          // Columnas del footer
+          &.my-3 {
+            // Estilo para la columna central con íconos sociales
+            .btn-social {
+              // Botones sociales
+              @include mixin.btn-social;
+            }
+          }
+          .link{
+            color: var.$color-link;
+          }
+        }
+      }
+    }
+  }
+
+  body.night-mode{
+    .footer{
+      .container{
+        .row{
+          .col-lg-4{
+            &.my-3 {
+              .btn-social{
+              }    
+              a{
+                background-color: var.$bg-btnSocial-night-mode;
+              }         
+            }
+            .link{
+              color: var.$color-link-night-mode;
+            } 
+          }
+        }
+      }
+    }
+  }
