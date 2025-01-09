@@ -51,38 +51,63 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-//night mode
+// night mode
 document.addEventListener("DOMContentLoaded", () => {
     const themeToggle = document.getElementById("theme-toggle");
 
-    // Consulta de tema: aplica el modo oscuro según la preferencia del sistema
     if (!localStorage.getItem("theme")) {
         const prefersNight = window.matchMedia("(prefers-color-scheme: dark)").matches;
         if (prefersNight) {
             document.body.classList.add("night-mode");
-            themeToggle.textContent = "☀️";
         }
     } else {
-        // Aplica el tema guardado en localStorage
         const currentTheme = localStorage.getItem("theme");
         if (currentTheme === "night") {
             document.body.classList.add("night-mode");
-            themeToggle.textContent = "☀️";
         }
     }
 
-    // Escucha el cambio de tema
+    updateIcons();
+
     themeToggle.addEventListener("click", () => {
-        document.body.classList.toggle("night-mode");
-        const isNightMode = document.body.classList.contains("night-mode");
+        if (!themeToggle.classList.contains("rotate")) {
+            themeToggle.classList.add("rotate");
 
-        // Cambia texto del botón
-        themeToggle.textContent = isNightMode ? "☀️" : "🌙";
+            // Rotar el botón (desactivamos otras animaciones durante este tiempo)
+            setTimeout(() => {
+                themeToggle.classList.remove("rotate");
+            }, 600);
 
-        // Guarda la preferencia
-        localStorage.setItem("theme", isNightMode ? "night" : "light");
+            // Cambiar el tema
+            document.body.classList.toggle("night-mode");
+            const isNightMode = document.body.classList.contains("night-mode");
+            localStorage.setItem("theme", isNightMode ? "night" : "light");
+            updateIcons();
+        }
     });
+
+    function updateIcons() {
+        const isNightMode = document.body.classList.contains("night-mode");
+        const sunIcon = themeToggle.querySelector(".icon.sun");
+        const moonIcon = themeToggle.querySelector(".icon.moon");
+
+        if (isNightMode) {
+            sunIcon.style.opacity = "0";
+            // sunIcon.style.transform = "scale(0.8)";
+            moonIcon.style.opacity = "1";
+            // moonIcon.style.transform = "scale(1)";
+        } else {
+            sunIcon.style.opacity = "1";
+            // sunIcon.style.transform = "scale(1)";
+            moonIcon.style.opacity = "0";
+            // moonIcon.style.transform = "scale(0.8)";
+        }
+    }
 });
+
+
+
+
 
 // Manejar el cierre de todos los modales
 document.addEventListener('DOMContentLoaded', function () {
@@ -108,6 +133,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  
+
 //guardar opcion de night mode
   const toggleNightMode = () => {
     document.body.classList.toggle('night-mode');
@@ -132,71 +159,91 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
   
-  
-
 // Obtener referencias al formulario y botón
 const form = document.getElementById('contactForm');
 const submitButton = document.getElementById('submitButton');
 
-// Validación del formulario
-form.addEventListener('submit', function (e) {
-    e.preventDefault(); // Evita el envío predeterminado
-    let isValid = true;
+// Función para validar un campo
+function validateField(field, regex = null) {
+    const value = field.value.trim();
+    const invalidFeedback = field.nextElementSibling;
 
-    // Validar nombre
+    if (regex) {
+        if (!regex.test(value)) {
+            field.classList.add('is-invalid');
+            field.classList.remove('is-valid');
+            if (invalidFeedback) {
+                invalidFeedback.textContent = field.dataset.errorMessage || 
+                    (field.type === 'email' ? 'Formato de correo no válido.' : 'Campo no válido.');
+            }
+            return false;
+        }
+    } else {
+        if (!value) {
+            field.classList.add('is-invalid');
+            field.classList.remove('is-valid');
+            if (invalidFeedback) {
+                invalidFeedback.textContent = field.dataset.errorMessage || 'Este campo es obligatorio.';
+            }
+            return false;
+        }
+
+        // Validación adicional: longitud máxima
+        if (field.maxLength && value.length > field.maxLength) {
+            field.classList.add('is-invalid');
+            field.classList.remove('is-valid');
+            if (invalidFeedback) {
+                invalidFeedback.textContent = `El texto debe ser menor a ${field.maxLength} caracteres.`;
+            }
+            return false;
+        }
+         // Validación de longitud mínima (si aplica)
+         if (field.minLength && value.length < field.minLength) {
+            field.classList.add('is-invalid');
+            field.classList.remove('is-valid');
+            if (invalidFeedback) {
+                invalidFeedback.textContent = `El texto debe ser mayor a ${field.minLength} caracteres.`;
+            }
+            return false;
+        }
+    }
+
+    field.classList.remove('is-invalid');
+    field.classList.add('is-valid');
+    if (invalidFeedback) invalidFeedback.textContent = '';
+    return true;
+}
+
+// Validación de todos los campos en tiempo real
+function validateForm() {
     const name = document.getElementById('name');
-    if (name.value.trim() === '') {
-        isValid = false;
-        name.classList.add('is-invalid');
-    } else {
-        name.classList.remove('is-invalid');
-    }
-
-    // Validar email
     const email = document.getElementById('email');
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email.value)) {
-        isValid = false;
-        email.classList.add('is-invalid');
-    } else {
-        email.classList.remove('is-invalid');
-    }
-
-    // Validar teléfono
     const phone = document.getElementById('phone');
-    if (phone.value.trim() === '') {
-        isValid = false;
-        phone.classList.add('is-invalid');
-    } else {
-        phone.classList.remove('is-invalid');
-    }
-
-    // Validar mensaje
     const message = document.getElementById('message');
-    if (message.value.trim() === '') {
-        isValid = false;
-        message.classList.add('is-invalid');
-    } else {
-        message.classList.remove('is-invalid');
-    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // Si es válido, envía el formulario
-    if (isValid) {
-        sendFormData();
-    }
+    const isNameValid = validateField(name);
+    const isEmailValid = validateField(email, emailRegex);
+    const isPhoneValid = validateField(phone);
+    const isMessageValid = validateField(message);
+
+    return isNameValid && isEmailValid && isPhoneValid && isMessageValid;
+}
+
+// Escuchar eventos 'input' para cada campo
+form.addEventListener('input', () => {
+    const isFormValid = validateForm();
+    submitButton.disabled = !isFormValid; // Habilita/deshabilita el botón de envío
 });
 
-// Verificar todos los campos y habilitar el botón
-form.addEventListener('input', () => {
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const message = document.getElementById('message').value.trim();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+// Validación al enviar el formulario
+form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Evita el envío predeterminado
+    const isValid = validateForm();
 
-    const isFormValid = name && email && phone && message && emailRegex.test(email);
-
-    submitButton.disabled = !isFormValid;  // Deshabilita el botón si el formulario no es válido
+    if (isValid) {
+        sendFormData(); // Envía el formulario si todo es válido
+    }
 });
 
 // Envío del formulario con fetch
@@ -212,17 +259,30 @@ function sendFormData() {
     })
         .then(response => {
             if (response.ok) {
+                document.getElementById('submitSuccessMessage').innerHTML = `
+                    <div class="text-center text-success mb-3">
+                        <strong>¡Formulario enviado exitosamente!</strong> Gracias por contactarnos. Te responderemos a la brevedad.
+                    </div>`;
                 document.getElementById('submitSuccessMessage').classList.remove('d-none');
                 document.getElementById('submitErrorMessage').classList.add('d-none');
                 form.reset();
                 submitButton.disabled = true; // Deshabilitar el botón tras el envío
                 submitButton.innerText = 'Message Sent'; // Cambiar el texto del botón
+                document.querySelectorAll('.is-valid').forEach((field) => field.classList.remove('is-valid'));
             } else {
+                document.getElementById('submitErrorMessage').innerHTML = `
+                    <div class="text-center text-danger mb-3">
+                        <strong>¡Error al enviar el formulario!</strong> Inténtalo nuevamente más tarde.
+                    </div>`;
                 document.getElementById('submitErrorMessage').classList.remove('d-none');
                 document.getElementById('submitSuccessMessage').classList.add('d-none');
             }
         })
         .catch(() => {
+            document.getElementById('submitErrorMessage').innerHTML = `
+                <div class="text-center text-danger mb-3">
+                    <strong>¡Error al enviar el formulario!</strong> Verifica tu conexión a internet e inténtalo nuevamente.
+                </div>`;
             document.getElementById('submitErrorMessage').classList.remove('d-none');
             document.getElementById('submitSuccessMessage').classList.add('d-none');
         });
@@ -261,37 +321,6 @@ document.getElementById('searchBar').addEventListener('input', (event) => {
 });
 
 
-/*
-document.addEventListener("DOMContentLoaded", () => {
-    // Seleccionar todos los elementos con el atributo data-animation
-    const animatedElements = document.querySelectorAll("[data-animation]");
-
-    // Opciones para el IntersectionObserver
-    const observerOptions = {
-        root: null, // Viewport completo
-        rootMargin: "0px 0px -50px 0px", // Espaciado para detectar antes de que entre completamente
-        threshold: 0.1, // Detectar cuando el 10% del elemento es visible
-    };
-
-    // Callback para manejar la intersección
-    const handleIntersection = (entries, observer) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                const animationType = entry.target.getAttribute("data-animation");
-                entry.target.classList.add("animate", animationType); // Agrega clases para animar
-                observer.unobserve(entry.target); // Deja de observar después de animar
-            }
-        });
-    };
-
-    // Crear el IntersectionObserver
-    const observer = new IntersectionObserver(handleIntersection, observerOptions);
-
-    // Observar cada elemento con data-animation
-    animatedElements.forEach((el) => observer.observe(el));
-});
-*/
-
 document.addEventListener("DOMContentLoaded", () => {
     const elements = document.querySelectorAll("[data-animation]");
   
@@ -313,3 +342,27 @@ document.addEventListener("DOMContentLoaded", () => {
     handleScroll(); // Para animar los elementos que ya están visibles
   });
   
+
+
+  const modal = document.querySelector('.modal');
+const openButton = document.querySelector('.open-modal-btn');
+const closeButton = document.querySelector('.close-modal-btn');
+
+// Abrir modal
+openButton.addEventListener('click', () => {
+  modal.classList.add('open');
+  modal.classList.remove('close');
+});
+
+// Cerrar modal
+closeButton.addEventListener('click', () => {
+  modal.classList.add('close');
+  modal.classList.remove('open');
+
+  // Retraso para ocultar completamente el modal después de la animación
+  setTimeout(() => {
+    modal.style.display = 'none';
+  }, 300); // Duración igual al tiempo de la transición
+});
+
+

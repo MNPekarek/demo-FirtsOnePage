@@ -1,5 +1,4 @@
 @use "var";
-@use "animation";
 
 //Mixin para modificar los botones XL
 @mixin btn-xl {
@@ -39,6 +38,7 @@
   font-size: 2.5rem;
   margin-top: 0px;
   margin-bottom: 1rem;
+  color: var.$text-title;
 }
 
 @mixin subtitles {
@@ -46,6 +46,7 @@
   font-weight: 400;
   font-style: italic;
   margin-bottom: 4rem;
+  color: var.$color-muted;
 }
 
 // Mixin animaciones
@@ -125,6 +126,13 @@ to {
 // Mixin para media query de ancho mínimo de 1400px
 @mixin min-width-1400 {
   @media (min-width: 1400px) {
+    @content;
+  }
+}
+
+// Mixin para media query de ancho maximo de 768px
+@mixin max-width-768px {
+  @media (max-width: 768px) {
     @content;
   }
 }
