@@ -1074,27 +1074,190 @@ body.night-mode .portfolio-modal .container .row .col-lg-8 .modal-body .btn:hove
   color: #ffffff;
 }
 
+body {
+  font-family: "Agu Display", sans-serif, sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+body.dark-mode {
+  background-color: #343a40;
+  color: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Josefin Sans", sans-serif, sans-serif;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+#template-header {
+  background-color: rgba(186, 6, 24, 0.7607843137);
+  color: #ffffff;
+  padding: 3rem 0;
+}
+#template-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+#template-header button {
+  margin: 0.5rem;
+}
+#template-header a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .description {
-  background-color: #f9f9f9;
-  padding: 2rem 0;
+  padding: 3rem 0;
+  background-color: #f8f9fa;
+}
+.description h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+.description ul {
+  list-style-type: none;
+  padding: 0;
+}
+.description ul li {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
 }
 
 .caracteristicas {
+  padding: 3rem 0;
+}
+.caracteristicas .row {
+  display: flex;
+  justify-content: space-between;
+}
+.caracteristicas .row .card {
   background-color: #ffffff;
-  padding: 2rem 0;
+  border: none;
+  border-radius: 5px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-h2, h3, h4 {
-  font-family: "poppins", sans-serif;
+.caracteristicas .row .card img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+.caracteristicas .row .card h5 {
+  font-size: 1.5rem;
   font-weight: bold;
+  margin-bottom: 1rem;
 }
-
-p {
+.caracteristicas .row .card p {
   font-size: 1rem;
-  line-height: 1.6;
-  color: #555;
+  line-height: 1.5;
 }
 
+#contactDemo {
+  background-color: #f8f9fa;
+  padding: 4rem 0;
+}
+#contactDemo h2 {
+  font-family: "Josefin Sans", sans-serif, sans-serif;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(186, 6, 24, 0.7607843137);
+  margin-bottom: 2rem;
+}
+#contactDemo .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+#contactDemo form {
+  background-color: #ffffff;
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+#contactDemo form .form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+#contactDemo form .form-group {
+  flex: 1;
+}
+#contactDemo form .form-group input, #contactDemo form .form-group textarea {
+  border-radius: 5px;
+  padding: 1.2rem;
+  border: 2px solid rgba(186, 6, 24, 0.7607843137);
+  width: 100%;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #212529;
+  background-color: #f8f9fa;
+  transition: border-color 0.3s ease-in-out;
+}
+#contactDemo form .form-group input:focus, #contactDemo form .form-group textarea:focus {
+  border-color: rgba(136.59375, 4.40625, 17.625, 0.7607843137);
+  outline: none;
+}
+#contactDemo form .form-group input::placeholder, #contactDemo form .form-group textarea::placeholder {
+  color: #6c757d;
+}
+#contactDemo textarea {
+  resize: none;
+  height: 150px;
+}
+#contactDemo button {
+  background-color: rgba(186, 6, 24, 0.7607843137);
+  color: #ffffff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#contactDemo button:hover {
+  background-color: rgba(136.59375, 4.40625, 17.625, 0.7607843137);
+}
+
+@media (prefers-color-scheme: dark) {
+  body.dark-mode {
+    background-color: #343a40;
+    color: #ffffff;
+  }
+  body.dark-mode #template-header {
+    background-color: #6c757d;
+  }
+  body.dark-mode .description {
+    background-color: #343a40;
+  }
+  body.dark-mode .caracteristicas .card {
+    background-color: #343a40;
+    color: #ffffff;
+  }
+}
+@media (max-width: 768px) {
+  #contactDemo {
+    padding: 3rem 0;
+  }
+  #contactDemo h2 {
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+  }
+  #contactDemo form {
+    padding: 2rem;
+  }
+}
 [data-animation] {
   opacity: 0;
   transition: all 0.6s ease-out;

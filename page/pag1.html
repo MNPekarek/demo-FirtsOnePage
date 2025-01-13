@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="This is a website for use as a template, it is a onepage with bootstrap, night mode, interactive portfolio, effects and animations, javascript, scss, functional form and many other things.">
+
+
+    <link rel="preload" href="../assets/img/header/DALL·E 2024-12-15 480px.webp" as="image" media="(max-width: 768px)">
+
+
+    <!-- Bootstrap (Carga diferida) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" media="print"
+        onload="this.media='all'" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous">
+    <noscript>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    </noscript>
+
+    <!-- FontAwesome (Carga diferida) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    </noscript>
+
+    <!-- Preconexión a Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts con "display=swap" para evitar bloqueo -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Agu+Display&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Dancing+Script:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+    <!-- Archivo CSS personalizado -->
+    <link rel="stylesheet" href="../css/style.css">
+
+
+    <title>OnePage Template Pro</title>
+</head>
+
+<body>
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-transparent" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#header"><img src="../assets/img/navbar-logo1.png" alt="logo" /></a>
+            <!-- <button id="theme-toggle" type="button">🌙</button>  -->
+            <button id="theme-toggle" type="button">
+                <span class="fas fa-sun icon sun"></span>
+                <span class="fas fa-moon icon moon"></span>
+            </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="masthead" id="header">
+        <div class="container">
+            <div class="masthead-subheading">Welcome To Our Studio!</div>
+            <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+            <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+        </div>
+
+    </header>
+
+
+    <!-- Services-->
+    <section class="page-section" id="services">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase" data-animation="zoom-in">Services</h2>
+                <h3 class="section-subheading">Digital solutions designed to boost your business and protect your
+                    online presence.</h3>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-warning"></i>
+                        <i class="fas fa-shopping-cart fa-stack-1x fa-inverse bg"></i>
+                    </span>
+                    <h4 class="my-3">E-Commerce</h4>
+                    <p>We enhance your business with personalized e-commerce solutions. We create intuitive, fast
+                        and secure online stores, designed to maximize your sales and improve the customer
+                        experience.</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-warning"></i>
+                        <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Responsive Design</h4>
+                    <p>Our responsive designs ensure your website looks perfect on any device. We optimize every detail
+                        to provide a smooth and engaging experience on both mobile and desktop"</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fas fa-circle fa-stack-2x text-warning"></i>
+                        <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="my-3">Web Security</h4>
+                    <p>Our responsive designs ensure your website looks perfect on any device. We optimize every
+                        detail to provide a smooth and engaging experience on both mobile and desktop.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Portfolio Section -->
+    <section class="page-section" id="portfolio">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase" data-animation="fade-down">Portfolio</h2>
+                <h3 class="section-subheading" data-animation="fade-up">Browse through our curated collection of
+                    stunning images.</h3>
+            </div>
+
+            <!-- Filters -->
+            <div class="text-center mb-4">
+                <button class="btn btn-outline-primary filter-btn" data-filter="all">All</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="Illustration">Illustration</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="Graphic Design">Graphic
+                    Design</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="Photography">Photography</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="Web Design">Web Design</button>
+
+            </div>
+
+            <!-- Search Bar -->
+            <div class="text-center mb-4">
+                <input type="text" id="searchBar" class="form-control" placeholder="Search portfolio...">
+            </div>
+
+            <div class="row">
+                <!-- Portfolio Items -->
+                <div class="col-lg-4 col-sm-6 mb-4" data-animation="fade-up" data-category="Web Design">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="../assets/img/portfolio/1.webp" alt="image of web design with a computer" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Design</div>
+                            <div class="portfolio-caption-subheading">Web Design</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6 mb-4 " data-animation="fade-up" data-category="Graphic Design">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="../assets/img/portfolio/2.webp" alt="Graphic design image of a clock with black background" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Explore</div>
+                            <div class="portfolio-caption-subheading">Graphic Design</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-sm-6 mb-4" data-animation="fade-up" data-category="Photography">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal3">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="../assets/img/portfolio/3.webp" alt="Empire State Building
+                            " />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">
+                                Landscape</div>
+                            <div class="portfolio-caption-subheading">Photography</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4" data-animation="fade-up" data-category="Photography">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal4">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="../assets/img/portfolio/4.webp" alt="Landscape of Iguazu Falls in Argentina" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Landscape</div>
+                            <div class="portfolio-caption-subheading">Photography</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4" data-animation="fade-up" data-category="Web Design">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal5">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="../assets/img/portfolio/5.webp" alt="
+                            Many images to create a brand design." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Brand</div>
+                            <div class="portfolio-caption-subheading">Web Design</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4" data-animation="fade-up" data-category="Web Design">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal6">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="../assets/img/portfolio/6.webp" alt="Sketches on a whiteboard to create a web design.
+                            " />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">
+                                colors</div>
+                            <div class="portfolio-caption-subheading">Web Design</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4" data-animation="fade-up" data-category="Web Design">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal7">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="../assets/img/portfolio/7.webp" alt="A cell phone showing a web application." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Web Application</div>
+                            <div class="portfolio-caption-subheading">Web Design</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4" data-animation="fade-up" data-category="Illustration">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal8">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="../assets/img/portfolio/8.webp" alt="An illustration of a brand with its products." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Image</div>
+                            <div class="portfolio-caption-subheading">Illustration</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4" data-animation="fade-up" data-category="Photography">
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal9">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="../assets/img/portfolio/9.webp" alt="View from above of New York buildings" />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-heading">Landscape</div>
+                            <div class="portfolio-caption-subheading">Photography</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About-->
+    <section class="page-section" id="about">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase" data-animation="fade-up">About</h2>
+                <h3 class="section-subheading" data-animation="fade-down">Our story, from humble beginnings to
+                    innovation-driven
+                    growth.</h3>
+            </div>
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-image" data-animation="zoom-in"><img class="rounded-circle img-fluid"
+                            src="../assets/img/about/1.jpg" alt="..." />
+                    </div>
+                    <div class="timeline-panel scroll-anim">
+                        <div class="timeline-heading">
+                            <h4>2009-2011</h4>
+                            <h4 class="subheading">Our Humble Beginnings</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>In our early days, we started as a small team of passionate innovators working from a
+                                modest office. Driven by creativity and determination, we focused on delivering
+                                impactful solutions for our first clients.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image" data-animation="zoom-in"><img class="rounded-circle img-fluid"
+                            src="../assets/img/about/2.jpg" alt="..." />
+                    </div>
+                    <div class="timeline-panel scroll-anim">
+                        <div class="timeline-heading">
+                            <h4>March 2011</h4>
+                            <h4 class="subheading">An Agency is Born</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>With growing demand for our services, we officially launched our agency, expanding
+                                our team and offering specialized services. This marked the beginning of our journey
+                                to establish long-term partnerships with clients worldwide.</p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-image" data-animation="zoom-in"><img class="rounded-circle img-fluid"
+                            src="../assets/img/about/3.jpg" alt="..." />
+                    </div>
+                    <div class="timeline-panel scroll-anim">
+                        <div class="timeline-heading">
+                            <h4>December 2015</h4>
+                            <h4 class="subheading">Transition to Full Service</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>LBy 2015, we transformed into a full-service digital agency, offering comprehensive
+                                solutions in web development, design, and marketing. This transition enabled us to
+                                tackle larger, more ambitious projects.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image" data-animation="zoom-in"> <img class="rounded-circle img-fluid"
+                            src="../assets/img/about/4.jpg" alt="..." />
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4>July 2020</h4>
+                            <h4 class="subheading">Phase Two Expansion</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>Amid a rapidly changing industry, we expanded our services to include e-commerce
+                                platforms and advanced security solutions. This phase strengthened our position as a
+                                leader in the digital space.</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <div class="timeline-image" data-animation="zoom-in">
+                        <h4>
+                            Be Part
+                            <br />
+                            Of Our
+                            <br />
+                            Story!
+                        </h4>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- Team-->
+    <section class="page-section" id="team">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
+                <h3 class="section-subheading">Meet the talented individuals driving our success and innovation.
+                </h3>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="../assets/img/team/1.jpg" alt="..." />
+                        <h4>Parveen Anand</h4>
+                        <p>Lead Designer</p>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Twitter Profile"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand Facebook Profile"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Parveen Anand LinkedIn Profile"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="../assets/img/team/2.jpg" alt="..." />
+                        <h4>Diana Petersen</h4>
+                        <p>Lead Marketer</p>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Diana Petersen Twitter Profile"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"
+                            aria-label="Diana Petersen Facebook Profile"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"
+                            aria-label="Diana Petersen LinkedIn Profile"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="../assets/img/team/3.jpg" alt="..." />
+                        <h4>Larry Parker</h4>
+                        <p>Lead Developer</p>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Twitter Profile"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker Facebook Profile"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Larry Parker LinkedIn Profile"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="large">Our dedicated team combines creativity, expertise, and passion to deliver
+                        outstanding results. Each member brings unique skills to ensure the success of every
+                        project.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact-->
+    <section class="page-section" id="contact">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Contact Us</h2>
+                <h3 class="section-subheading">Get in touch with us, we'd love to hear from you!</h3>
+            </div>
+            <form id="contactForm" action="https://formspree.io/f/manyzpbe" method="POST">
+                <div class="row align-items-stretch mb-5">
+                    <div class="col-md-6">
+                        <div class="form-group">
+
+                            <input class="form-control" id="name" type="text" placeholder="Your Name *" name="name"
+                                minlength="5" maxlength="100"
+                                data-error-message="Por favor, ingrese un nombre válido. Ejemplo: John Doe" required />
+                            <div class="invalid-feedback"></div>
+
+                        </div>
+                        <div class="form-group">
+
+                            <input class="form-control" id="email" type="email" placeholder="Your Email *" name="email"
+                                data-error-message="Ingrese un correo electrónico válido. Ejemplo: nombre@dominio.com"
+                                required />
+                            <div class="invalid-feedback"></div>
+                        </div>
+                        <div class="form-group">
+
+                            <input class="form-control" id="phone" type="tel" placeholder="Your Phone *" name="phone"
+                                minlength="9" maxlength="15"
+                                data-error-message="Ingrese un número de teléfono válido. Ejemplo: +54 123456789"
+                                required />
+                            <div class="invalid-feedback"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+
+                            <textarea class="form-control" id="message" placeholder="Your Message *" name="message"
+                                minlength="20" maxlength="100"
+                                data-error-message="Por favor, escriba su mensaje. No puede estar vacío."
+                                required></textarea>
+                            <div class="invalid-feedback"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Success/Error messages -->
+                <div class="d-none" id="submitSuccessMessage">
+                    <div class="text-center text-white mb-3">
+                        <div class="fw-bolder">Form submission successful!</div>
+                    </div>
+                </div>
+                <div class="d-none" id="submitErrorMessage">
+                    <div class="text-center text-danger mb-3">Error sending message!</div>
+                </div>
+                <!-- Submit Button -->
+                <div class="text-center">
+                    <button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit" disabled>Send
+                        Message</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- Footer-->
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2024</div>
+                <div class="col-lg-4 my-3 my-lg-0">
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i
+                            class="fab fa-twitter"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a class="link text-decoration-none me-3" href="#!">Privacy Policy</a>
+                    <a class="link text-decoration-none" href="#!">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Portfolio Modals-->
+    <!-- Portfolio item 1 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="../assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Branding y Estrategia Visual</h2>
+                                <p class="item-intro">Ideal for showing visual identity projects of a brand.</p>
+                                <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/1.webp" alt="image of web design with a computer" />
+                                <p>
+                                    Upload an image representative of the graphic design, logo or visual elements
+                                    developed. Accompany with a brief explanation of the approach and results obtained.
+                                </p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Client:</strong>
+                                        Design
+                                    </li>
+                                    <li>
+                                        <strong>Category:</strong>
+                                        Web Design
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                    type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio item 2 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="../assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">
+                                    Graphic Design Project</h2>
+                                <p class="item-intro">Showcase an original graphic design or related project.</p>
+                                <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/2.webp" alt="Graphic design image of a clock with black background" />
+                                <p>
+                                    Use poster images, illustrations or any graphic work. Explain the purpose of the
+                                    design and the tools used.</p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Client:</strong>
+                                        Explore
+                                    </li>
+                                    <li>
+                                        <strong>Category:</strong>
+                                        Graphic Design
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                    type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio item 3 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="../assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Photography Portfolio</h2>
+                                <p class="item-intro">Perfect for highlighting work related to photography.</p>
+                                <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/3.webp" alt="Empire State Building
+                                " />
+                                <p>Upload an image with good resolution and quality. Mention details about the session, the style of photography and the equipment used.</p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Client:</strong>
+                                        Landscape
+                                    </li>
+                                    <li>
+                                        <strong>Category:</strong>
+                                        Photography
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                    type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio item 4 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="../assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Professional Photography</h2>
+                                <p class="item-intro">Photography Portfolio</p>
+                                <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/4.webp" alt="Landscape of Iguazu Falls in Argentina" />
+                                <p>Perfect for highlighting work related to photography.
+                                    Explanation: Upload an image with good resolution and quality. Mention details about
+                                    the session, the style of photography and the equipment used.</p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Client:</strong>
+                                        Landscape
+                                    </li>
+                                    <li>
+                                        <strong>Category:</strong>
+                                        Photography
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                    type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio item 5 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="../assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">User Interface Design</h2>
+                                <p class="item-intro">Presents the design of a web page or application.</p>
+                                <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/5.webp" alt="
+                                Many images to create a brand design." />
+                                <p>Include high-quality screenshots of your interfaces, highlighting the user experience and the tools used in the design.</p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Client:</strong>
+                                        Brand
+                                    </li>
+                                    <li>
+                                        <strong>Category:</strong>
+
+                                        Web Design
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                    type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio item 6 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="../assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Mobile Application Prototype</h2>
+                                <p class="item-intro">Showcases the design or development of an app.</p>
+                                <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/6.webp" alt="Sketches on a whiteboard to create a web design.                                " />
+                                <p>Includes a screenshot of the app design in action. Explains the main functions and target audience.</p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Client:</strong>
+                                        colors
+                                    </li>
+                                    <li>
+                                        <strong>Category:</strong>
+
+                                        Web Design
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                    type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio item 7 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="../assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">
+                                    Complete Web Development</h2>
+                                <p class="item-intro">Share details about a functional website you created.</p>
+                                <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/7.webp" alt="A cell phone showing a web application." />
+                                <p>Add an image of the home page or a featured section of the project. Describes the technologies used and the benefits for the client.</p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Client:</strong>
+                                        Web Application
+                                    </li>
+                                    <li>
+                                        <strong>Category:</strong>
+                                        Web Design
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                    type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio item 8 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="../assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Advertising campaign</h2>
+                                <p class="item-intro">Digital Advertising Campaign</p>
+                                <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/8.webp" alt="An illustration of a brand with its products." />
+                                <p>Share the design of a complete advertising campaign.
+                                    Explanation: Upload images of the main campaign pieces (banners, social networks,
+                                    etc.). Describes the concept and the results obtained.</p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Client:</strong>
+                                        Image
+                                    </li>
+                                    <li>
+                                        <strong>Category:</strong>
+                                        Illustration
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                    type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio item 9 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal9" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="../assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <h2 class="text-uppercase">Animation Project</h2>
+                                <p class="item-intro">Animation and Motion Graphics.</p>
+                                <img class="img-fluid d-block mx-auto" src="../assets/img/portfolio/9.webp" alt="View from above of New York buildings" />
+                                <p>Ideal for including videos or motion graphics.
+                                    Explanation: Upload a frame or poster of your animation. Details the software used and the objectives of the project.</p>
+                                <ul class="list-inline">
+                                    <li>
+                                        <strong>Client:</strong>
+                                        Landscape
+                                    </li>
+                                    <li>
+                                        <strong>Category:</strong>
+                                        Photography
+                                    </li>
+                                </ul>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                    type="button">
+                                    <i class="fas fa-xmark me-1"></i>
+                                    Close Project
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="../js/scripts.js" defer></script>
+
+
+
+</body>
+
+
+
+</html>

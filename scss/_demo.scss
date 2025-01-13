@@ -1,23 +1,240 @@
 
+// Variables de color y fuente
+$primary-color: #ba0618c2;
+$secondary-color: #6c757d;
+$background-light: #f8f9fa;
+$background-dark: #343a40;
+$text-light: #ffffff;
+$text-dark: #212529;
+$font-primary: 'Agu Display', sans-serif;
+$font-secondary: 'Josefin Sans', sans-serif;
 
-.description {
-    background-color: #f9f9f9;
-    padding: 2rem 0;
+// Modo Light/Dark
+$light-mode: true;
+
+// Estilos generales
+body {
+  font-family: $font-primary, sans-serif;
+  background-color: $background-light;
+  color: $text-dark;
+
+  // Modo Dark
+  &.dark-mode {
+    background-color: $background-dark;
+    color: $text-light;
+  }
 }
 
-.caracteristicas {
-    background-color: #ffffff;
-    padding: 2rem 0;
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-secondary, sans-serif;
 }
 
-h2, h3, h4 {
-    font-family: 'poppins', sans-serif;
+// Contenedores
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+// Header
+#template-header {
+  background-color: $primary-color;
+  color: $text-light;
+  padding: 3rem 0;
+
+  h1 {
+    font-size: 2.5rem;
     font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  button {
+    margin: 0.5rem;
+  }
+
+  a {
+    color: $text-light;
+    text-decoration: none;
+  }
 }
 
-p{
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #555;
+// Sección de descripción
+.description {
+  padding: 3rem 0;
+  background-color: $background-light;
+
+  h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      font-size: 1.1rem;
+      margin: 0.5rem 0;
+    }
+  }
 }
 
+// Características
+.caracteristicas {
+  padding: 3rem 0;
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+
+    .card {
+      background-color: $text-light;
+      border: none;
+      border-radius: 5px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+      img {
+        max-width: 100%;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+      }
+
+      h5 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+// Formulario de contacto
+#contactDemo {
+  background-color: $background-light;
+  padding: 4rem 0;
+
+  h2 {
+    font-family: $font-secondary, sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $primary-color;
+    margin-bottom: 2rem;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  form {
+    background-color: $text-light;
+    padding: 3rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .form-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    .form-group {
+        flex: 1;
+    
+        input, textarea {
+          border-radius: 5px;
+          padding: 1.2rem;
+          border: 2px solid $primary-color;
+          width: 100%;
+          border-radius: 5px;
+          font-size: 1rem;
+          color: $text-dark;
+          background-color: $background-light;
+          transition: border-color 0.3s ease-in-out;
+
+          &:focus {
+            border-color: darken($primary-color, 10%);
+            outline: none;
+          }
+
+          &::placeholder {
+            color: $secondary-color;
+          }
+        }
+      }
+  }
+
+  textarea {
+    resize: none;
+    height: 150px;
+  }
+
+  button {
+    background-color: $primary-color;
+    color: $text-light;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+}
+
+// Modo Light/Dark (si se necesita)
+@media (prefers-color-scheme: dark) {
+  body {
+    &.dark-mode {
+      background-color: $background-dark;
+      color: $text-light;
+
+      #template-header {
+        background-color: $secondary-color;
+      }
+
+      .description {
+        background-color: $background-dark;
+      }
+
+      .caracteristicas {
+        .card {
+          background-color: $background-dark;
+          color: $text-light;
+        }
+      }
+    }
+  }
+}
+
+// Media queries para pantallas más pequeñas
+@media (max-width: 768px) {
+    #contactDemo {
+      padding: 3rem 0;
+  
+      h2 {
+        font-size: 2rem;
+        letter-spacing: 1.5px;
+      }
+  
+      form {
+        padding: 2rem;
+      }
+    }
+  }

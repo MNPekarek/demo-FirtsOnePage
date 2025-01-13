@@ -37,10 +37,13 @@
 <body>
     <main class="live-demo p-4">
         <!-- Controles interactivos arriba de la plantilla -->
-        <header id="template-header" class="text-center p-3">
-            <h1>Plantilla: OnePage</h1>
-            <button class="btn btn-success">Live Demo</button>
-            <button class="btn btn-outline-primary">Descargar</button>
+        <header id="template-header" class="text-center p-3"
+            style="background-image: url('./assets/img/header/'); background-size: cover; background-position: center;">
+            <div class="container text-light py-5">
+                <h1>Plantilla: OnePage Pro</h1>
+                <button class="btn btn-success"><a href="./page/pag1.html" target="_blank">Live Demo</a></button>
+                <button class="btn btn-outline-primary">Descargar</button>
+            </div>
         </header>
 
         <section class="description">
@@ -57,7 +60,6 @@
                     <p>Con un enfoque en detalles impecables, esta plantilla está equipada con:</p>
                     <ul>
                         <li>Portafolio interactivo con modales dinámicos para destacar tus mejores trabajos.</li>
-                        <li>Opciones de header personalizables: imágenes impactantes o videos envolventes.</li>
                         <li>Modo Light/Dark para adaptarse al estilo de tus usuarios.</li>
                         <li>Scroll suave para una navegación fluida y amigable.</li>
                         <li>Formulario funcional con validación en JavaScript, asegurando una comunicación sin
@@ -66,7 +68,41 @@
                 </div>
             </div>
         </section>
+
         <section class="caracteristicas">
+            <div class="container">
+                <div class="text-center">
+                    <h3>Características</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card p-3 text-center">
+                            <img src="./assets/img/feature1.jpg" alt="Diseño moderno y adaptable" class="img-fluid mb-3">
+                            <h5>Diseño moderno y adaptable</h5>
+                            <p>Cada elemento ha sido cuidadosamente diseñado para ofrecer un balance perfecto entre estética y funcionalidad.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card p-3 text-center">
+                            <img src="./assets/img/feature2.jpg" alt="Optimización SEO" class="img-fluid mb-3">
+                            <h5>Optimización para buscadores (SEO)</h5>
+                            <p>Gracias a técnicas avanzadas de SEO, tu sitio estará listo para posicionarse entre los primeros resultados de búsqueda.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card p-3 text-center">
+                            <img src="./assets/img/feature3.jpg" alt="Portafolio destacado" class="img-fluid mb-3">
+                            <h5>Portafolio que destaca tu talento</h5>
+                            <p>Muestra tu trabajo de forma profesional con una galería dinámica que incluye categorías y descripciones detalladas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+
+        <!-- <section class="caracteristicas">
             <div class="container">
                 <div class="text-center">
                     <h3>Caracteristicas</h3>
@@ -75,12 +111,15 @@
                     <div class="card p-3 text-center">
                         <i class="bi bi-display" style="font-size: 2rem; color: #007bff;"></i>
                         <h5>Diseño moderno y adaptable</h5>
-                        <p>Cada elemento ha sido cuidadosamente diseñado para ofrecer un balance perfecto entre estética y funcionalidad. Nuestro diseño responsive asegura que tu página luzca increíble en computadoras, tablets y smartphones.</p>
+                        <p>Cada elemento ha sido cuidadosamente diseñado para ofrecer un balance perfecto entre estética
+                            y funcionalidad. Nuestro diseño responsive asegura que tu página luzca increíble en
+                            computadoras, tablets y smartphones.</p>
                     </div>
                     <div class="card p-3 text-center">
                         <i class="bi bi-display" style="font-size: 2rem; color: #007bff;"></i>
                         <h5>Optimización para buscadores (SEO)</h5>
-                        <p>Gracias a técnicas avanzadas de SEO, tu sitio estará listo para posicionarse entre los primeros
+                        <p>Gracias a técnicas avanzadas de SEO, tu sitio estará listo para posicionarse entre los
+                            primeros
                             resultados de búsqueda, ayudándote a llegar a más clientes.</p>
                     </div>
                     <div class="card p-3 text-center">
@@ -92,24 +131,47 @@
                     <div class="card p-3 text-center">
                         <i class="bi bi-display" style="font-size: 2rem; color: #007bff;"></i>
                         <h5>Personalización avanzada</h5>
-                        <p>Con el uso de SCSS, puedes modificar colores, tipografías y estilos de forma sencilla, adaptando la
+                        <p>Con el uso de SCSS, puedes modificar colores, tipografías y estilos de forma sencilla,
+                            adaptando la
                             plantilla a tus necesidades sin esfuerzo.</p>
                     </div>
                     <div class="card p-3 text-center">
                         <i class="bi bi-display" style="font-size: 2rem; color: #007bff;"></i>
                         <h5>Atención a los detalles</h5>
-                        <p>Desde una página 404 estilizada hasta un footer profesional, cada rincón de esta plantilla ha sido
+                        <p>Desde una página 404 estilizada hasta un footer profesional, cada rincón de esta plantilla ha
+                            sido
                             diseñado para maximizar la experiencia del usuario.</p>
                     </div>
-                    
-                    
-                </div>                
+
+
+                </div>
             </div>
-            
+
             <p>¿Listo para transformar tu presencia online? ¡Explora las posibilidades y personaliza tu futuro con esta
                 increíble plantilla!</p>
             </div>
+        </section> -->
+
+        <section id="contactDemo" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Contáctame</h2>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <input type="text" class="form-control" placeholder="Nombre" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="email" class="form-control" placeholder="Correo electrónico" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="4" placeholder="Tu mensaje" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
         </section>
+        
 
     </main>
 
