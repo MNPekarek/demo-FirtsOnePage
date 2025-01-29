@@ -44,6 +44,11 @@
                 <button class="btn btn-success"><a href="./page/pag1.html" target="_blank">Live Demo</a></button>
                 <button class="btn btn-secondary">Version 2</button>
             </div>
+            <!-- Button to switch between light/dark modes -->
+            <button id="theme-toggle" type="button">
+                <span class="fas fa-sun icon sun"></span>
+                <span class="fas fa-moon icon moon"></span>
+            </button>
         </header>
 
         <section class="description">
@@ -75,9 +80,12 @@
                     <h3>Características</h3>
                 </div>
                 <div class="row">
+                    <!-- Caracteristicas interactivas -->
                     <div class="col-md-4 mb-4">
                         <div class="card p-3 text-center">
-                            <img src="./assets/img/feature1.jpg" alt="Diseño moderno y adaptable" class="img-fluid mb-3">
+                            <video autoplay loop muted playsinline width="600">
+                                <source src="assets/video/Onepagedesign.mp4" type="video/mp4">
+                            </video>
                             <h5>Diseño moderno y adaptable</h5>
                             <p>Cada elemento ha sido cuidadosamente diseñado para ofrecer un balance perfecto entre estética y funcionalidad.</p>
                         </div>
@@ -91,14 +99,17 @@
                     </div>
                     <div class="col-md-4 mb-4">
                         <div class="card p-3 text-center">
-                            <img src="./assets/img/feature3.jpg" alt="Portafolio destacado" class="img-fluid mb-3">
+                            <video autoplay loop muted playsinline width="600">
+                                <source src="assets/video/Portfolio.mp4" type="video/mp4">
+                            </video>
                             <h5>Portafolio que destaca tu talento</h5>
                             <p>Muestra tu trabajo de forma profesional con una galería dinámica que incluye categorías y descripciones detalladas.</p>
                         </div>
                     </div>
+                    <!-- Caracteristicas abstractas respresantadas con iconos -->
                     <div class="col-md-4 mb-4">
                         <div class="card p-3 text-center">
-                            <img src="./assets/img/feature3.jpg" alt="Portafolio destacado" class="img-fluid mb-3">
+                            <i class="fas fa-paint-brush fa-3x text-primary mb-3"></i>
                             <h5>Personalización avanzada</h5>
                             <p>Con el uso de SCSS, puedes modificar colores, tipografías y estilos de forma sencilla,
                                 adaptando la
@@ -107,11 +118,16 @@
                     </div>
                     <div class="col-md-4 mb-4">
                         <div class="card p-3 text-center">
-                            <img src="./assets/img/feature3.jpg" alt="Portafolio destacado" class="img-fluid mb-3">
+                            <i class="fas fa-search fa-3x text-primary mb-3"></i>
                             <h5>Atención a los detalles</h5>
-                            <p>Desde una página 404 estilizada hasta un footer profesional, cada rincón de esta plantilla ha
-                                sido
-                                diseñado para maximizar la experiencia del usuario.</p>
+                            <p>Desde una página 404 estilizada hasta un footer profesional, cada rincón de esta plantilla ha sido diseñado para maximizar la experiencia del usuario.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card p-3 text-center">
+                            <i class="fas fa-mobile-alt fa-3x text-primary mb-3"></i>
+                            <h5>Diseño adaptable</h5>
+                            <p>La plantilla se ajusta perfectamente a dispositivos móviles, tabletas y pantallas de escritorio.</p>
                         </div>
                     </div>
                     
@@ -119,9 +135,7 @@
             </div>
         </section>
         
-            <!-- <p>¿Listo para transformar tu presencia online? ¡Explora las posibilidades y personaliza tu futuro con esta -->
-                <!-- increíble plantilla!</p> -->
-           
+            
 
         <section id="contactDemo" class="py-5">
             <div class="container">
