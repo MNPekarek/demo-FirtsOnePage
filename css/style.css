@@ -1103,9 +1103,12 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  color: rgba(186, 6, 24, 0.7607843137);
 }
 #template-header button {
   margin: 0.5rem;
+  color: #ffffff;
+  background-color: rgba(186, 6, 24, 0.7607843137);
 }
 #template-header a {
   color: #ffffff;
