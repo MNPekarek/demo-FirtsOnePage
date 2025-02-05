@@ -1084,7 +1084,12 @@ body.dark-mode {
   color: #ffffff;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "Josefin Sans", sans-serif, sans-serif;
 }
 
@@ -1152,12 +1157,12 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 5px;
   margin-bottom: 1rem;
 }
-.caracteristicas .row .card h5 {
+.caracteristicas .row h5 {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
-.caracteristicas .row .card p {
+.caracteristicas .row p {
   font-size: 1rem;
   line-height: 1.5;
 }
@@ -1197,7 +1202,8 @@ h1, h2, h3, h4, h5, h6 {
 #contactDemo form .form-group {
   flex: 1;
 }
-#contactDemo form .form-group input, #contactDemo form .form-group textarea {
+#contactDemo form .form-group input,
+#contactDemo form .form-group textarea {
   border-radius: 5px;
   padding: 1.2rem;
   border: 2px solid rgba(186, 6, 24, 0.7607843137);
@@ -1208,11 +1214,13 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #f8f9fa;
   transition: border-color 0.3s ease-in-out;
 }
-#contactDemo form .form-group input:focus, #contactDemo form .form-group textarea:focus {
+#contactDemo form .form-group input:focus,
+#contactDemo form .form-group textarea:focus {
   border-color: rgba(136.59375, 4.40625, 17.625, 0.7607843137);
   outline: none;
 }
-#contactDemo form .form-group input::placeholder, #contactDemo form .form-group textarea::placeholder {
+#contactDemo form .form-group input::placeholder,
+#contactDemo form .form-group textarea::placeholder {
   color: #6c757d;
 }
 #contactDemo textarea {
