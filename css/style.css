@@ -1151,6 +1151,52 @@ h6 {
   border-radius: 5px;
   padding: 2rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.caracteristicas .row .card .portfolio-link .portfolio-hover {
+  position: absolute;
+  top: 55;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.caracteristicas .row .card .portfolio-link .portfolio-hover .portfolio-hover-content {
+  color: white;
+  transform: scale(0.8);
+  transition: transform 0.3s ease-in-out;
+}
+.caracteristicas .row .card .portfolio-link .portfolio-hover:hover {
+  opacity: 1;
+}
+.caracteristicas .row .card .portfolio-link .portfolio-hover:hover .portfolio-hover-content {
+  transform: scale(1);
+}
+.caracteristicas .row .card .ratio {
+  position: relative;
+}
+.caracteristicas .row .card .ratio video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .caracteristicas .row .card .ratio video {
+    max-height: 200px;
+  }
+}
+.caracteristicas .row .card .ratio:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
 }
 .caracteristicas .row .card img {
   max-width: 100%;
