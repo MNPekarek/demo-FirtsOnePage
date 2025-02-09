@@ -1199,9 +1199,13 @@ h6 {
   transition: transform 0.3s ease-in-out;
 }
 .caracteristicas .row .card img {
-  max-width: 100%;
   border-radius: 5px;
   margin-bottom: 1rem;
+}
+@media (min-width: 992px) {
+  .caracteristicas .row .card img {
+    height: 180px;
+  }
 }
 .caracteristicas .row h5 {
   font-size: 1.5rem;
@@ -1315,6 +1319,53 @@ h6 {
     padding: 2rem;
   }
 }
+body.night-mode .description {
+  background-color: #343a40;
+}
+body.night-mode .description h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+body.night-mode .description ul {
+  list-style-type: none;
+  padding: 0;
+}
+body.night-mode .description ul li {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+body.night-mode #contactDemo {
+  background-color: #343a40;
+}
+body.night-mode #contactDemo .container form {
+  background-color: black;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+body.night-mode #contactDemo .container form .form-group input,
+body.night-mode #contactDemo .container form .form-group textarea {
+  border: 2px solid rgba(186, 6, 24, 0.7607843137);
+  color: #ffffff;
+  background-color: #343a40;
+}
+body.night-mode #contactDemo .container form .form-group input:focus,
+body.night-mode #contactDemo .container form .form-group textarea:focus {
+  border-color: rgba(136.59375, 4.40625, 17.625, 0.7607843137);
+  outline: none;
+}
+body.night-mode #contactDemo .container form .form-group input::placeholder,
+body.night-mode #contactDemo .container form .form-group textarea::placeholder {
+  color: #6c757d;
+}
+body.night-mode #contactDemo .container button {
+  background-color: rgba(186, 6, 24, 0.7607843137);
+  color: #ffffff;
+}
+body.night-mode #contactDemo .container button:hover {
+  background-color: rgba(136.59375, 4.40625, 17.625, 0.7607843137);
+}
+
 [data-animation] {
   opacity: 0;
   transition: all 0.6s ease-out;
