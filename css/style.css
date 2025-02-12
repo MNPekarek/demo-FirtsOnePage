@@ -1129,9 +1129,12 @@ h6 {
   font-weight: bold;
   margin-bottom: 2rem;
 }
+.description p {
+  font-size: 1.1rem;
+}
 .description ul {
-  list-style-type: none;
-  padding: 0;
+  list-style: disc !important;
+  margin-left: 20px;
 }
 .description ul li {
   font-size: 1.1rem;
@@ -1364,6 +1367,27 @@ body.night-mode #contactDemo .container button {
 }
 body.night-mode #contactDemo .container button:hover {
   background-color: rgba(136.59375, 4.40625, 17.625, 0.7607843137);
+}
+
+body.night-mode .caracteristicas .row .card {
+  background-color: #343a40;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+}
+body.night-mode .caracteristicas .row .card .portfolio-link .portfolio-hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+body.night-mode .caracteristicas .row .card .portfolio-link .portfolio-hover .portfolio-hover-content {
+  color: white;
+}
+body.night-mode .caracteristicas .row h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+body.night-mode .caracteristicas .row p {
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 [data-animation] {
