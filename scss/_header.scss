@@ -6,14 +6,14 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: var.$color-text-light;
-  background-image: url("../assets/img/header/DALL·E\ 2024-12-15\ 480px.webp");
+  background-image: url("../assets/img/header/DALLE-480px.webp");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
 
   @include mixin.min-width-768 {
-    background-image: url("../assets/img/header/DALLE2~1.webp");
+    background-image: url("../assets/img/header/DALLE2.webp");
     padding-top: 17rem;
     padding-bottom: 12.5rem;
   }
@@ -64,3 +64,4 @@ header.masthead {
     }
   }
 }
+
